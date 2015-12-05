@@ -1,6 +1,0 @@
-setup.cfg
-jollaicon.egg-info/PKG-INFO
-jollaicon.egg-info/SOURCES.txt
-jollaicon.egg-info/dependency_links.txt
-jollaicon.egg-info/requires.txt
-jollaicon.egg-info/top_level.txt
