@@ -1,0 +1,5 @@
+.idea
+*.pyc
+__pycache__
+.python-version
+jollaicon.egg-info

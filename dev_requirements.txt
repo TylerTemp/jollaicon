@@ -1,0 +1,4 @@
+# for development, to convert markdown readme into rst
+cairocffi
+docpie
+pypandoc

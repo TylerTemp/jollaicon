@@ -1,0 +1,27 @@
+Metadata-Version: 1.1
+Name: jollaicon
+Version: 0.0.1
+Summary: Convert your ``png`` icon into Sailfish OS style
+Home-page: https://github.com/TylerTemp/jollaicon
+Author: TylerTemp
+Author-email: tylertempdev@gmail.com
+License: GPLv3
+Download-URL: http://github.com/TylerTemp/jollaicon/zipball/master/
+Description: jollaicon
+        =========
+        
+Keywords: icon sailfish
+Platform: any
+Classifier: Development Status :: 2 - Pre-Alpha
+Classifier: License :: OSI Approved :: GNU General Public License v3 (GPLv3)
+Classifier: Topic :: Utilities
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python :: 2
+Classifier: Programming Language :: Python :: 2.6
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3
+Classifier: Programming Language :: Python :: 3.2
+Classifier: Programming Language :: Python :: 3.3
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: Implementation :: PyPy
