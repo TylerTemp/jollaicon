@@ -19,6 +19,7 @@ with open(os.path.join(os.path.dirname(__file__), 'README.md'),
 
 setup(
     name='jollaicon',
+    py_modules=['jollaicon'],
     package_data={
         '': [
             'README.md',
