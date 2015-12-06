@@ -39,7 +39,7 @@ AUTHOR
 import cairocffi as cairo
 import math
 
-__version__ = '0.0.1'
+__version__ = '0.0.2'
 
 def make_mask(context,
               top_left=False, top_right=False,
@@ -158,9 +158,15 @@ if __name__ == '__main__':
             color = args['--fill']
             if color.startswith('('):
                 color = color[1:-1]
-            bg = [int(x) for x in color.split(',')]
+            rgb = color.split(',')
+            if len(rgb) == 4:
+                alpha = float(rgb.pop(-1))
+            else:
+                alpha = 1
+            bg = [float(x) / 255 for x in rgb]
+            bg.append(alpha)
         else:
-            bg = (255, 255, 255)
+            bg = (1, 1, 1)
         main_args['bg'] = bg
 
     in_file = args['<input>']
