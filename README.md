@@ -19,38 +19,38 @@ Install
 
 It requires [python](http://python.org/) and [python-pip](https://pip.pypa.io/en/stable/installing/)
 
+Install by:
+
+```bash
+pip install git+git://github.com/TylerTemp/jollaicon.git
+```
+
+or
+
 ```bash
 git clone https://github.com/TylerTemp/jollaicon.git
-pip install -r requirements.txt
 cd jollaicon
+pip install .
 ```
 
 Then run as
 
-```
-python jollaicon.py --help
-```
-
-If you're a python developer, you can simpliy install by
-
-```
-pip install git+git://github.com/TylerTemp/jollaicon.git
+```bash
+jollaicon --help
 ```
 
-Then use as
+If you're a python developer, you can use it as
 
 ```python
 from jollaicon import icon
 help(icon)
 ```
 
-NOTE: Mac OSX need to install `cairo` separated:
+NOTE: this lib depends on python's package `cairocffi`, which depends on system's CFFI package. If you hit any problem installing, plz check and follow [cairocffi official document](https://cairocffi.readthedocs.io/en/latest/overview.html#installing-cffi)
 
-```
-brew install cairo
-```
-
-More about [brew command](http://brew.sh/)
+>   *   On Linux, install `python-dev` and `libffi-dev` from your system’s package manager.
+>   *   On OS X, install `pkg-config` and `libffi`, for example with [Homebrew](http://brew.sh/). You may need to [set the PKG_CONFIG_PATH environment variable](http://cffi.readthedocs.org/#macos-x).
+>   *   On Windows, consider using [Christoph Gohlke’s unofficial binary builds](http://www.lfd.uci.edu/~gohlke/pythonlibs/#cffi).
 
 Usage
 ---------
@@ -78,3 +78,24 @@ Options:
 
 The corners of Sailfish icon are only round or rectangle.
 Use `-1`, `-2`, `-3`, `-4` to set which corner is round/rectangle
+
+Example
+-----------
+
+```
+jollaicon -3 example_img/logo.png example_img/out.png
+```
+
+source image:
+
+![](example_img/logo.png)
+
+result image:
+
+![](example_img/out.png)
+
+LISENSE
+------------
+
+1.  anything under `example_img` folder: all rights reserved to [steam](https://store.steampowered.com/)
+2.  other file's license please read [LICENSE](LICENSE)
