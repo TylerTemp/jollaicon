@@ -36,10 +36,10 @@ AUTHOR
     BUG reports are welcome:
     https://github.com/TylerTemp/jollaicon/issues
 """
-import cairocffi as cairo
 import math
+import cairocffi as cairo
 
-__version__ = '0.0.2'
+__version__ = '0.0.3'
 
 def make_mask(context,
               top_left=False, top_right=False,
@@ -136,18 +136,24 @@ def icon(icon_file, out_file,
     background.write_to_png(out_file)
 
 
-main = icon
+def main(argv=None):
+    """The main routine. Use ``icon`` instead. Require ``docpie``"""
+    sys = __import__('sys')
+    try:
+        pie = __import__('docpie')
+    except ImportError:
+        sys.stderr.write('Require [docpie](https://github.com/TylerTemp/docpie)'
+                         '. You can install it by ``pip install docpie``')
+        sys.exit(1)
 
-
-if __name__ == '__main__':
-    import sys
-    from docpie import Docpie
-
-    class Pie(Docpie):
+    class Pie(pie.Docpie):
         usage_name = 'SYNOPSIS'
         option_name = 'DESCRIPTION'
 
-    args = dict(Pie(__doc__, version=__version__, appearedonly=True).docpie())
+    if argv is None:
+        argv = sys.argv
+    args = dict(
+            Pie(__doc__, version=__version__, appearedonly=True).docpie(argv))
     main_args = {}
     main_args['top_left'] = args.get('--top-left', False)
     main_args['top_right'] = args.get('--top-right', False)
@@ -179,4 +185,10 @@ if __name__ == '__main__':
     main_args['icon_file'] = in_file
     main_args['out_file'] = out_file
 
-    icon(**main_args)
+    del sys
+    del pie
+
+    return icon(**main_args)
+
+if __name__ == '__main__':
+    main()

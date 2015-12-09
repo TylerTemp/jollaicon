@@ -19,25 +19,27 @@ Install
 
 It requires [python](http://python.org/) and [python-pip](https://pip.pypa.io/en/stable/installing/)
 
+Install by:
+
+```bash
+pip install git+git://github.com/TylerTemp/jollaicon.git
+```
+
+or
+
 ```bash
 git clone https://github.com/TylerTemp/jollaicon.git
-pip install -r requirements.txt
 cd jollaicon
+pip install .
 ```
 
 Then run as
 
-```
-python jollaicon.py --help
-```
-
-If you're a python developer, you can simpliy install by
-
-```
-pip install git+git://github.com/TylerTemp/jollaicon.git
+```bash
+jollaicon --help
 ```
 
-Then use as
+If you're a python developer, you can use it as
 
 ```python
 from jollaicon import icon

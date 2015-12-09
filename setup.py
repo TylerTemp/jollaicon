@@ -26,7 +26,7 @@ setup(
             'LICENSE',
         ]
     },
-    version='0.0.2',
+    version='0.0.3',
     author='TylerTemp',
     author_email='tylertempdev@gmail.com',
     url='https://github.com/TylerTemp/jollaicon',
@@ -39,6 +39,11 @@ setup(
         'cairocffi',
         'docpie'
     ],
+    entry_points={
+        'console_scripts': [
+        'jollaicon = jollaicon:main'
+        ]
+    },
     platforms='any',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
